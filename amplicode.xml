@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AmplicodePersistenceUnitSettings">
+    <persistence-units>
+      <persistence-unit moduleName="location" name="Default">
+        <packages>
+          <package value="ru.fmd.location" />
+        </packages>
+      </persistence-unit>
+      <persistence-unit moduleName="person" name="Default">
+        <packages>
+          <package value="ru.fmd.person" />
+        </packages>
+      </persistence-unit>
+      <persistence-unit moduleName="weather" name="Default">
+        <packages>
+          <package value="ru.fmd.weather" />
+        </packages>
+      </persistence-unit>
+    </persistence-units>
+  </component>
+</project>
