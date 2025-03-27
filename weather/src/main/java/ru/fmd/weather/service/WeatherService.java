@@ -10,7 +10,6 @@ import ru.fmd.weather.model.Main;
 import ru.fmd.weather.model.Root;
 
 @Service
-@Cacheable(value="roots")
 public class WeatherService {
     @Value("${weather.base_url}")
     private String BASE_URL;
@@ -22,6 +21,7 @@ public class WeatherService {
         this.restTemplate = restTemplate;
     }
 
+
     public Root getWeather(Coord coord) {
         return restTemplate.getForObject(String.format("%s?lat=%f&lon=%f&units=metric&appid=%s",
                         BASE_URL,
@@ -31,10 +31,12 @@ public class WeatherService {
                 Root.class);
     }
 
+    @Cacheable(value="weather")
     public Main getMainWeather(Coord coord) {
         return getWeather(coord).getMain();
     }
 
+    @Cacheable(value="weather")
     public Main getMainWeather(String lon, String lat) throws BadRequestException {
         try {
             Coord coord = new Coord(Double.parseDouble(lon), Double.parseDouble(lat));
