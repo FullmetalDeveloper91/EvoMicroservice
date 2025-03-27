@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="CrudOperationsStateConfig">
+    <option name="configPaths">
+      <map>
+        <entry key="dto" value="ru.fmd.location.model.Geodata" />
+        <entry key="repository" value="ru.fmd.location.repository.LocationRepository" />
+        <entry key="serviceProxy" value="ru.fmd.location.service.LocationService" />
+      </map>
+    </option>
+  </component>
   <component name="SpringProjectLocalState">
     <option name="firstOpen" value="false" />
   </component>
