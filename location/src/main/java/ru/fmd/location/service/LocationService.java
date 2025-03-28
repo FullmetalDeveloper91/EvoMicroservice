@@ -3,6 +3,7 @@ package ru.fmd.location.service;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.server.ResponseStatusException;
@@ -41,6 +42,7 @@ public class LocationService {
                 : new ResponseEntity<>(repository.save(location), HttpStatus.CREATED);
     }
 
+    @Transactional
     public Location update(String name, Location location) throws ResponseStatusException  {
         Location oldLocation = repository.findByNameIgnoreCase(name).orElseThrow(() ->
                 new ResponseStatusException(HttpStatus.NOT_FOUND, NOT_FOUND_TEMPLATE.formatted(name)));
@@ -54,9 +56,8 @@ public class LocationService {
     public Location delete(String name) {
         Location location = repository.findByNameIgnoreCase(name).orElseThrow(() ->
                 new ResponseStatusException(HttpStatus.NOT_FOUND, NOT_FOUND_TEMPLATE.formatted(name)));
-        if (location != null) {
-            repository.delete(location);
-        }
+
+        repository.delete(location);
         return location;
     }
 
