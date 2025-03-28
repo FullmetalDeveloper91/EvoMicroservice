@@ -2,11 +2,13 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="discovery_server" />
+        <module name="discovery-server" />
       </profile>
       <profile name="Annotation profile for EvoMicroservicesM" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -16,11 +18,35 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
         </processorPath>
         <module name="Weather" />
-        <module name="weather" />
-        <module name="location" />
         <module name="Person" />
-        <module name="person" />
         <module name="Location" />
+      </profile>
+      <profile name="Annotation profile for location" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+        </processorPath>
+        <module name="location" />
+      </profile>
+      <profile name="Annotation profile for person" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+        </processorPath>
+        <module name="person" />
+      </profile>
+      <profile name="Annotation profile for weather" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+        </processorPath>
+        <module name="weather" />
       </profile>
     </annotationProcessing>
   </component>
@@ -29,6 +55,7 @@
       <module name="Location" options="-parameters" />
       <module name="Person" options="-parameters" />
       <module name="Weather" options="-parameters" />
+      <module name="discovery-server" options="-parameters" />
       <module name="discovery_server" options="-parameters" />
       <module name="location" options="-parameters" />
       <module name="person" options="-parameters" />
